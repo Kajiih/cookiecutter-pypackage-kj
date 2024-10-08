@@ -26,7 +26,7 @@
 2. **Generate the Python package project:**
 
     ```bash
-    cookiecutter https://github.com/Kajih/cookiecutter-pypackage-kj.git
+    cookiecutter https://github.com/Kajiih/cookiecutter-pypackage-kj.git
     ```
 
 Continue...
