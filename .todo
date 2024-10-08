@@ -1,0 +1,13 @@
+Features:
+    ☐ Add `Github action` for CI and package publishing
+    ☐ Add python version handling in `pyproject.toml` clasifiers
+
+Bugs:
+
+Code Improvement:
+
+Tests:
+
+Final:
+    ☐ Update `pyproject.toml`
+    ☐ Update `README.md`

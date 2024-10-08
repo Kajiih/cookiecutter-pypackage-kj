@@ -1,0 +1,120 @@
+[build-system]
+requires = ["hatchling", "hatch-requirements-txt"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cookiecutter-pypackage-kj"
+version = "0.1.0"
+dynamic = ["dependencies", "optional-dependencies"]
+description = "Kajih's Cookiecutter template for a Python package"
+readme = "README.md"
+license = "BSD-3-Clause"
+requires-python = ">=3.12"
+keywords = ["cookiecutter", "python", "template", "package", "kajih"]
+authors = [{ name = "Kajih", email = "itskajih@gmail.com" }]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    'License :: OSI Approved :: BSD License',
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Topic :: Software Development",
+]
+
+    [project.urls]
+    Repository = "https://github.com/Kajiih/cookiecutter-pypackage-kj"
+
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements/base.txt"]
+    [tool.hatch.metadata.hooks.requirements_txt.optional-dependencies]
+    dev = ["requirements/dev.txt"]
+
+
+# === Ruff === #
+[tool.ruff] # https://docs.astral.sh/ruff/settings
+target-version = "py312"
+line-length = 120
+src = ["src"]
+exclude = ["*cookiecutter.project_slug*"]
+# In addition to the standard set, include `.ipynb` files.
+extend-include = ["*.ipynb"]
+
+    [tool.ruff.lint]
+    preview = true
+    fixable = ["ALL"]
+    select = [
+        "RUF",  # Ruff specific rules
+        "PL",   # Pylint
+        "B",    # Bugbear
+        "D",    # Docstring
+        "D213", # Multi-line docstring summary should start at the second line
+        "D401", # First line should be in imperative mood
+        "D404", # First line should not start with this
+        "I",    # Isort
+        "C90",  # Mccabe complexity
+        "UP",   # PyUpgrade
+        "ANN",  # Type annotations
+        "S",    # Bandit
+        "A",    # flake8-builtins
+        "C4",   # flake8-comprehensions
+        "FA",   # flake8-future-annotations
+        "ISC",  # flake8-implicit-str-concat
+        "ICN",  # flake8-import-conventions
+        "G",    # flake8-logging-format
+        "LOG",  # flake8-logging
+        "PIE",  # flake8-pie
+        "PT",   # flake8-pytest-style
+        "RET",  # flake8-return
+        "SLF",  # flake8-self
+        "SIM",  # flake8-simplify
+        "TID",  # flake8-tidy-imports
+        "TCH",  # flake8-type-checking
+        "ARG",  # flake8-unused-arguments
+        "PTH",  # flake8-use-pathlib
+        "TD",   # flake8-todos
+        "ERA",  # flake8-eradicate
+        "TRY",  # tryceratops
+        "NPY",  # numpy specefic rules
+        "PERF", # Perflint
+        "FURB", # refurb
+        # "WPS",  # wemake-python-styleguide -> Not yet supported
+
+    ]
+    ignore = [
+        "D105",   # Missing docstring in magic method
+        "D107",   # Missing docstring in `__init__`
+        "D212",   # Multi-line docstring summary should start at the first line
+        "TD002",  # Missing author in TODO; try: `TODO(<author_name>): ...` or `TODO @<author_name>: ...`
+        "TD003",  # Missing issue link on the line following this TODO
+        "TD004",  # Missing colon after TODO
+        "ANN401", # Dynamically typed expressions (typing.Any) are disallowed in
+        "RET504", # Unnecessary assignment to `...` before `return` statement
+
+        # TODO: Comment out for produciton release
+        "ERA001", # Found commented-out code
+        "S101",   # Use of `assert` detected
+    ]
+
+        [tool.ruff.lint.per-file-ignores]
+        "tests/*" = [
+            "SLF001", # Private member accessed: `self._foo`
+            "D100",   # Missing docstring in public module
+            "D101",   # Missing docstring in public class
+            "D102",   # Missing docstring in public method
+            "D103",   # Missing docstring in public function
+            "ANN",
+        ]
+
+        [tool.ruff.lint.pydocstyle]
+        convention = "google"
+        [tool.ruff.lint.pylint]
+        max-args = 6
+[tool.ruff.format]
+preview = true
+docstring-code-format = true
