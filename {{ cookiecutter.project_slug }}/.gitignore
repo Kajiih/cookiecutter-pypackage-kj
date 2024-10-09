@@ -167,4 +167,7 @@ cython_debug/
 #.idea/
 
 # IDE settings
-# .vscode/
+.vscode/
+
+# Quick virtual environment name
+{{cookiecutter.virtual_env_name}}
