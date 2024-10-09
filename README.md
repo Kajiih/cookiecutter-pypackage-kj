@@ -29,7 +29,19 @@
     cookiecutter https://github.com/Kajiih/cookiecutter-pypackage-kj.git
     ```
 
-Continue...
+3. **Create a GitHub repository with the according name**
+
+    See the name printed in the consol of the end of the project generation.
+
+4. Execute the [bash script]({{%20cookiecutter.project_slug%20}}/setup_project.bash) to initialize git, pushing the first commit to your GitHub repository, creating a conda environment and installing dependencies
+
+    ```bash
+    setup_project.bash
+    ```
+
+    If there is any error, execute the commands manually one by one.
+
+5. Start coding your awesome package!
 
 ## ✨ Features
 
