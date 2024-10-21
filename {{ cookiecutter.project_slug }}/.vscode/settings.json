@@ -15,5 +15,8 @@
         "cookiecutter",
         "Kajih",
         "pypi",
+        "{{cookiecutter.project_slug}}",
+        "Quickstart",
+        "pyproject"
     ]
 }

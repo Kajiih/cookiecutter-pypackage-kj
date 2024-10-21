@@ -23,7 +23,8 @@
         "Quickstart",
         "slugified",
         "traceback",
-        "venv"
+        "venv",
+        "pyproject"
     ],
     "files.associations": {
         // "pyproject.toml": "cookiecutted"

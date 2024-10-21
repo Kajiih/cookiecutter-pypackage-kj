@@ -54,7 +54,7 @@ packages = ["src/{{cookiecutter.project_slug}}"]
 # === Ruff === #
 [tool.ruff] # https://docs.astral.sh/ruff/settings
 target-version = "py{{cookiecutter.minimal_python_version | replace('.', '') }}"
-line-length = 120
+line-length = 100
 src = ["src"]
 # In addition to the standard set, include `.ipynb` files.
 extend-include = ["*.ipynb"]
@@ -109,6 +109,7 @@ extend-include = ["*.ipynb"]
         "TD004",  # Missing colon after TODO
         "ANN401", # Dynamically typed expressions (typing.Any) are disallowed in
         "RET504", # Unnecessary assignment to `...` before `return` statement
+        "G004",   # Logging statement uses f-string
 
         # TODO: Comment out for produciton release
         "ERA001", # Found commented-out code
