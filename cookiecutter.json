@@ -8,7 +8,6 @@
     "pypi_username": "Kajih",
     "version": "0.1.0",
     "minimal_python_version": "3.12",
-    "virtual_env_name": "venv_name",
     "open_source_license": [
         "MIT license",
         "BSD license",

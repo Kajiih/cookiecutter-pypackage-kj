@@ -28,21 +28,10 @@
 ## 💻 Installation
 
 1. **Create virtual environment**\
-    We recommend you use a [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/) virtual environment:
-
-    ```bash
-      #  For python>={{cookiecutter.minimal_python_version}}
-      conda create -n {{cookiecutter.virtual_env_name}} python={{cookiecutter.minimal_python_version}}
-      conda activate {{cookiecutter.virtual_env_name}}
-    ```
+    TO UPDATE
 
 2. **Install the package and its dependencies**\
-
-    ```bash
-    git clone https://github.com/{{cookiecutter.__gh_slug}}
-    pip install -r requirements/base.txt
-    pip install -r requirements/dev.txt
-    ```
+    TO UPDATE
 
 <!-- ### Requirements -->
 
