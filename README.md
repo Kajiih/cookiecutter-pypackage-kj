@@ -36,7 +36,7 @@
 4. Execute the [bash script]({{%20cookiecutter.project_slug%20}}/setup_project.bash) to initialize git, pushing the first commit to your GitHub repository, creating a conda environment and installing dependencies
 
     ```bash
-    setup_project.bash
+    bash {{ cookiecutter.project_slug }}/setup_project.sh
     ```
 
     If there is any error, execute the commands manually one by one.

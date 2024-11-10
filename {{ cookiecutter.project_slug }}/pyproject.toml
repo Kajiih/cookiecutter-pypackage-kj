@@ -43,13 +43,6 @@ dependencies = [
     # "tqdm",
     ]
 
-    [project.urls] # TODO: Add these
-    Homepage = "https://example.com"
-    Documentation = "https://{{ cookiecutter.project_slug | replace('_', '-') }}.readthedocs.io"
-    Repository = "https://github.com/{{cookiecutter.__gh_slug}}"
-    Issues = "https://github.com/{{cookiecutter.__gh_slug}}/issues"
-    Changelog = "https://github.com/{{cookiecutter.__gh_slug}}/blob/main/changelog.md"
-
 
 [tool.uv]
 default-groups = ["dev", "lint", "type-check"]
