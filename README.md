@@ -15,8 +15,11 @@
 - [💻 Quickstart](#-quickstart)
 - [✨ Features](#-features)
 
+<!-- Add dependencies with links: cookiecutter, git, gh and uv -->
+
 ## 💻 Quickstart
 
+<!-- Replace by install dependencies if not already installed -->
 1. **Install the latest Cookiecutter** if you haven't installed it yet:
 
     ```bash

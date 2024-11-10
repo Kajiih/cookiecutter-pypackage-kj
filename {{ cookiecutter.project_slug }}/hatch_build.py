@@ -19,7 +19,7 @@ class AboutMetadataHookOld(MetadataHookInterface):
             metadata: The dictionary containing the project metadata.
         """
         # Dynamically load __about__.py
-        about_path = Path(self.root) / "src/musicbrainz2notion/__about__.py"
+        about_path = Path(self.root) / "src/{{cookiecutter.project_slug}}/__about__.py"
         spec = importlib.util.spec_from_file_location("__about__", about_path)
         if spec is None or spec.loader is None:
             raise ImportError(f"Could not load metadata from {about_path}")  # noqa: TRY003
