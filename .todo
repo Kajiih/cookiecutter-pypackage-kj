@@ -6,6 +6,7 @@ Features:
     ☐ Write setup_project script in Python see: `draft/setup_project.py`
         ☐ Support `macos`, `windows` and `linux`
     ☐ Separate setup scripts to setup git, github repo, virtual env, etc
+        ☐ Allow repository to already exist?
 
 Bugs:
 

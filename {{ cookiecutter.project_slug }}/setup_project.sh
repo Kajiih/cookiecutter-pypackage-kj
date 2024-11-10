@@ -3,7 +3,6 @@
 # shellcheck source=/dev/null
 
 # Variables
-PROJECT_SLUG="{{ cookiecutter.project_slug }}"
 REPO_NAME="{{ cookiecutter.__gh_slug }}"
 REPO_DESCRIPTION="{{ cookiecutter.project_short_description }}"
 PRIVATE=false # Set to true if the repository should be private
@@ -22,9 +21,6 @@ command -v gh >/dev/null 2>&1 || {
     echo >&2 "gh (GitHub CLI) is not installed. Aborting."
     exit 1
 }
-
-# Navigate to the project directory
-cd "$PROJECT_SLUG" || exit
 
 # Virtual environment
 uv venv --python "$PY_VERSION"
