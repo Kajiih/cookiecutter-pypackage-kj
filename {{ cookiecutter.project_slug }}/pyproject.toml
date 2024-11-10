@@ -33,9 +33,9 @@ classifiers = [ # https://pypi.org/classifiers/
     "Programming Language :: Python :: Implementation :: CPython",
 ]
 dependencies = [
-    "frosch",
-    "loguru",
-    "rich",
+    # "frosch",
+    # "loguru",
+    # "rich",
     # "typed-settings[attrs,cattrs]",
     # "python-dotenv",
     # "cyclopts",
