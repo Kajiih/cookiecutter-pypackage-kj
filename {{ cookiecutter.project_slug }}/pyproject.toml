@@ -21,7 +21,7 @@ license = { file = "LICENSE" }
 {% endif -%}
 requires-python = ">={{cookiecutter.minimal_python_version}}"
 keywords = ["python"] # TODO: Add these
-authors = [{ name = "{{cookiecutter.full_name}}", email = "{{cookiecutter.email}}" }]
+
 classifiers = [ # https://pypi.org/classifiers/
     "Development Status :: 2 - Pre-Alpha",
     {% if cookiecutter.open_source_license in license_classifiers -%}
