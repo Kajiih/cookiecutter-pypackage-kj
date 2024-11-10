@@ -50,3 +50,11 @@ rm "$(basename "$0")"
 git add -A
 git commit -m "🎉 Project setup"
 git push origin main
+
+# Success message
+printf "\n===========================================================\n"
+printf "🎉 Project setup successfully completed!\n"
+printf "Git repository initialized and pushed to GitHub.\n"
+printf "Virtual environment created and dependencies installed.\n"
+printf "You're ready to start coding!\n"
+printf "===========================================================\n\n"
