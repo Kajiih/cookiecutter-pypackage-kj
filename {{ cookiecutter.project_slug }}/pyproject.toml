@@ -32,6 +32,7 @@ classifiers = [ # https://pypi.org/classifiers/
     "Programming Language :: Python :: {{cookiecutter.minimal_python_version}}",
     "Programming Language :: Python :: Implementation :: CPython",
 ]
+
 dependencies = [
     # "frosch",
     # "loguru",

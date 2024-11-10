@@ -12,18 +12,31 @@
 
 ## Contents <!-- omit from toc -->
 
-- [💻 Quickstart](#-quickstart)
+- [📋 Requirements](#-requirements)
+- [🚀 Quickstart](#-quickstart)
 - [✨ Features](#-features)
 
-<!-- Add dependencies with links: cookiecutter, git, gh and uv -->
+## 📋 Requirements
 
-## 💻 Quickstart
+Unsure the following dependencies are installed:
 
-<!-- Replace by install dependencies if not already installed -->
-1. **Install the latest Cookiecutter** if you haven't installed it yet:
+- Python>=3.12
+- [Cookiecutter](https://cookiecutter.readthedocs.io/en/stable/installation.html)
+- [Git](https://git-scm.com/downloads)
+- [GitHub CLI (gh)](https://cli.github.com/)
+- [uv](https://docs.astral.sh/uv/getting-started/installation/)
+
+## 🚀 Quickstart
+
+1. **Install the [requirement](#-requirements)**
+
+    You can verify all required tools are correctly installed by running:
 
     ```bash
-    pip install -U cookiecutter
+    cookiecutter --version
+    git --version
+    gh --version
+    uv --version
     ```
 
 2. **Generate the Python package project:**
@@ -32,26 +45,15 @@
     cookiecutter https://github.com/Kajiih/cookiecutter-pypackage-kj.git
     ```
 
-3. **Create a GitHub repository with the according name**
+3. **Setup the project**
 
-    See the name printed in the consol of the end of the project generation.
+    Follow the instructions displayed at the end of the generation process to initialize Git, create the GitHub repository, and set up the virtual environment
 
-4. Execute the [bash script]({{%20cookiecutter.project_slug%20}}/setup_project.bash) to initialize git, pushing the first commit to your GitHub repository, creating a conda environment and installing dependencies
-
-    ```bash
-    bash {{ cookiecutter.project_slug }}/setup_project.sh
-    ```
-
-    If there is any error, execute the commands manually one by one.
-
-5. Start coding your awesome package!
+4. **Start coding your awesome package!**
 
 ## ✨ Features
 
+- Automatically setups GitHub repository and virtual environment with `uv`
 - Configurations for `Ruff`, `Pytest`, `pytest-coverage`
 - Dynamic versioning and dependencies with `hatch`
 - TODOs management with [todo+](https://github.com/fabiospampinato/vscode-todo-plus#demo)
-
-## Note <!-- omit from toc -->
-
-- Run command `Create Table of Contents` (in the VS Code Command Palette) to insert a new table of contents.

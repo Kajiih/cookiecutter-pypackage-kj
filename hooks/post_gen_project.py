@@ -18,8 +18,6 @@ if __name__ == "__main__":
 print("\n" + "=" * 80)
 print(f"{BOLD}{GREEN}🎉 PROJECT BUILT SUCCESSFULLY 🎉{RESET}")
 print(f"\n{CYAN}To set up the project for development, follow these steps:{RESET}\n")
-# print(f"{YELLOW}1.{RESET} Navigate to the project directory: `cd {{ cookiecutter.project_slug }}`")
-print(
-    f"{YELLOW}2.{RESET} Run the setup script: `bash {{ cookiecutter.project_slug }}/setup_project.sh`\n"
-)
+print(f"{YELLOW}1.{RESET} Navigate to the project directory: `cd {{ cookiecutter.project_slug }}`")
+print(f"{YELLOW}2.{RESET} Run the setup script: `bash setup_project.sh`\n")
 print("=" * 80 + "\n")
