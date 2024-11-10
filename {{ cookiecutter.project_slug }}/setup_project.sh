@@ -32,6 +32,10 @@ source .venv/bin/activate
 # .venv\Scripts\activate # Windows
 uv sync
 
+# Initialize Git repository
+git init
+git branch -M main # Ensure the branch name is 'main'
+
 # GitHub repo creation
 VISIBILITY="--public"
 if [ "$PRIVATE" = true ]; then
@@ -47,7 +51,6 @@ fi
 rm "$(basename "$0")"
 
 # Initial commit and push
-git branch -M main # Ensure the branch name is 'main'
 git add -A
 git commit -m "🎉 Project setup"
 git push origin main
