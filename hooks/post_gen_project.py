@@ -29,9 +29,7 @@ if __name__ == "__main__":
     print(f"{BOLD}{GREEN}🎉 PROJECT BUILT SUCCESSFULLY 🎉{RESET}")
     print(f"\nTo set up the project for development, follow these steps:\n")
     print(
-        f"{YELLOW}1.{RESET} Navigate to the project directory: {BOLD}{GREEN}cd {{ cookiecutter.project_slug }}{RESET}"
+        f"{YELLOW}1.{RESET} Navigate to the project directory: {GREEN}cd {{ cookiecutter.project_slug }}{RESET}"
     )
-    print(
-        f"{YELLOW}2.{RESET} Run the setup script: {BOLD}{GREEN}{python_cmd} setup_project.py{RESET}\n"
-    )
+    print(f"{YELLOW}2.{RESET} Run the setup script: {GREEN}{python_cmd} setup_project.py{RESET}\n")
     print("=" * 80 + "\n")

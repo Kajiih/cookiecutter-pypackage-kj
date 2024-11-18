@@ -137,11 +137,11 @@ def display_success_message() -> None:
     print("\nYou're ready to start coding!\n")
 
     # Instructions to activate virtual environment
-    print(f"To activate the virtual environment, run:")
     if os.name == "nt":
-        print(f"{BOLD}{GREEN}.venv\\Scripts\\activate{RESET}")
+        activate_command = f"{GREEN}.venv\\Scripts\\activate{RESET}"
     else:
-        print(f"{BOLD}{GREEN}source .venv/bin/activate{RESET}")
+        activate_command = f"{GREEN}source .venv/bin/activate{RESET}"
+    print(f"To activate the virtual environment, run: {activate_command}")
     print("=" * 59 + "\n")
 
 
