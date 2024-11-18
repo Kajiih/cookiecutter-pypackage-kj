@@ -12,6 +12,14 @@ import subprocess  # noqa: S404
 import sys
 from pathlib import Path
 
+# ANSI color codes
+RESET = "\033[0m"
+BOLD = "\033[1m"
+GREEN = "\033[32m"
+CYAN = "\033[36m"
+YELLOW = "\033[33m"
+RED = "\033[31m"
+
 # Variables
 REPO_NAME: str = "{{ cookiecutter.__gh_slug }}"
 REPO_DESCRIPTION: str = "{{ cookiecutter.project_short_description }}"
@@ -22,16 +30,16 @@ PY_VERSION: str = "{{ cookiecutter.minimal_python_version }}"
 def run_command(command: list[str], check: bool = True) -> None:
     """Run a shell command and optionally raise an error if it fails."""
     try:
-        subprocess.run(command, check=check)
+        subprocess.run(command, check=check)  # noqa: S603
     except subprocess.CalledProcessError as e:
-        print(f"Command failed: {e}")
+        print(f"{RED}Command failed: {e}{RESET}")
         sys.exit(1)
 
 
 def check_command_exists(command_name: str) -> None:
     """Check if a command exists in the system."""
     if shutil.which(command_name) is None:
-        print(f"{command_name} is not installed. Aborting.")
+        print(f"{RED}{command_name} is not installed. Aborting.{RESET}")
         sys.exit(1)
 
 
@@ -44,33 +52,40 @@ def check_required_commands() -> None:
 
 def create_virtualenv() -> None:
     """Create a virtual environment using uv."""
-    proceed = input("Do you want to create a virtual environment? (y/n): ").strip().lower()
+    proceed = (
+        input(f"{CYAN}Do you want to create a virtual environment? (y/n): {RESET}").strip().lower()
+    )
     if proceed == "y":
-        print("Creating virtual environment...")
+        print(f"{GREEN}Creating virtual environment...{RESET}")
         run_command(["uv", "venv", "--python", PY_VERSION])
         # Install dependencies
+        print(f"{GREEN}Installing dependencies...{RESET}")
         run_command(["uv", "sync"])
     else:
-        print("Skipping virtual environment creation.")
+        print(f"{YELLOW}Skipping virtual environment creation.{RESET}")
 
 
 def initialize_git_repo() -> None:
     """Initialize a Git repository."""
-    proceed = input("Do you want to initialize a Git repository? (y/n): ").strip().lower()
+    proceed = (
+        input(f"{CYAN}Do you want to initialize a Git repository? (y/n): {RESET}").strip().lower()
+    )
     if proceed == "y":
-        print("Initializing Git repository...")
+        print(f"{GREEN}Initializing Git repository...{RESET}")
         run_command(["git", "init"])
         run_command(["git", "branch", "-M", "main"])
     else:
-        print("Skipping Git repository initialization.")
+        print(f"{YELLOW}Skipping Git repository initialization.{RESET}")
 
 
 def create_github_repo() -> None:
     """Create a GitHub repository."""
-    proceed = input("Do you want to create a GitHub repository? (y/n): ").strip().lower()
+    proceed = (
+        input(f"{CYAN}Do you want to create a GitHub repository? (y/n): {RESET}").strip().lower()
+    )
     if proceed == "y":
         visibility: str = "--public" if not PRIVATE else "--private"
-        print("Creating GitHub repository...")
+        print(f"{GREEN}Creating GitHub repository...{RESET}")
         try:
             run_command([
                 "gh",
@@ -86,54 +101,57 @@ def create_github_repo() -> None:
                 "origin",
             ])
         except subprocess.CalledProcessError:
-            print("Failed to create GitHub repository. Aborting.")
+            print(f"{RED}Failed to create GitHub repository. Aborting.{RESET}")
             sys.exit(1)
     else:
-        print("Skipping GitHub repository creation.")
+        print(f"{YELLOW}Skipping GitHub repository creation.{RESET}")
 
 
 def delete_setup_script() -> None:
     """Delete the setup script."""
-    proceed = input("Do you want to delete the setup script? (y/n): ").strip().lower()
+    proceed = input(f"{CYAN}Do you want to delete the setup script? (y/n): {RESET}").strip().lower()
     if proceed == "y":
         script_path: Path = Path(__file__).resolve()
-        print(f"Deleting setup script {script_path}...")
+        print(f"{GREEN}Deleting setup script {script_path}...{RESET}")
         script_path.unlink()
     else:
-        print("Skipping deletion of setup script.")
+        print(f"{YELLOW}Skipping deletion of setup script.{RESET}")
 
 
 def initial_commit_and_push() -> None:
     """Make initial commit and push to GitHub."""
     proceed = (
-        input("Do you want to make the initial commit and push to GitHub? (y/n): ").strip().lower()
+        input(f"{CYAN}Do you want to make the initial commit and push to GitHub? (y/n): {RESET}")
+        .strip()
+        .lower()
     )
     if proceed == "y":
-        print("Setting up initial commit and pushing to GitHub...")
+        print(f"{GREEN}Setting up initial commit and pushing to GitHub...{RESET}")
         run_command(["git", "add", "-A"])
         run_command(["git", "commit", "-m", "🎉 Project setup"])
         run_command(["git", "push", "origin", "main"])
     else:
-        print("Skipping initial commit and push.")
+        print(f"{YELLOW}Skipping initial commit and push.{RESET}")
 
 
 def display_success_message() -> None:
     """Display the success message and instructions."""
     print("\n" + "=" * 59)
-    print("🎉 Project setup successfully completed!")
-    print("Virtual environment created and dependencies installed.")
-    print("Git repository initialized and pushed to GitHub.")
+    print(f"{BOLD}{GREEN}🎉 Project setup successfully completed!{RESET}")
+    print(f"{GREEN}Virtual environment created and dependencies installed.{RESET}")
+    print(f"{GREEN}Git repository initialized and pushed to GitHub.{RESET}")
     print("You're ready to start coding!")
     print("=" * 59 + "\n")
     # Instructions to activate virtual environment
-    print("To activate the virtual environment, run:")
+    print(f"{CYAN}To activate the virtual environment, run:{RESET}")
     if os.name == "nt":
-        print(".venv\\Scripts\\activate")
+        print(f"{YELLOW}.venv\\Scripts\\activate{RESET}")
     else:
-        print("source .venv/bin/activate")
+        print(f"{YELLOW}source .venv/bin/activate{RESET}")
 
 
 def main() -> None:
+    """Run all setup commands."""
     check_required_commands()
     create_virtualenv()
     initialize_git_repo()
