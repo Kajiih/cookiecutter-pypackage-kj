@@ -27,10 +27,12 @@
 
 ## 💻 Installation
 
-1. **Create virtual environment**\
+1. **Create virtual environment**
+
     TO UPDATE
 
-2. **Install the package and its dependencies**\
+2. **Install the package and its dependencies**
+
     TO UPDATE
 
 <!-- ### Requirements -->
