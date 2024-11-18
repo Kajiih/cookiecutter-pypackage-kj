@@ -166,11 +166,10 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-
 # Cookiecutter
 output/
 python_boilerplate/
 cookiecutter-pypackage-env/
 
 # IDE settings
-# .vscode/
+.vscode/
