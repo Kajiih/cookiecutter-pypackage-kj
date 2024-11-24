@@ -55,7 +55,6 @@ dev = [
     "ipdb",
     "ipykernel",
     "jupyter",
-    "matplotlib",
     "pytest",
     "pytest-cov",
 ]
@@ -64,7 +63,7 @@ type-check = ["basedpyright"]
 
 [tool.hatch.version]
 path = "src/{{cookiecutter.project_slug}}/__about__.py"
-[tool.hatch.metadata.hooks.custom] # Enables custom hooks for dyamic metadata
+[tool.hatch.metadata.hooks.custom] # Enables custom hooks for dynamic metadata
 [tool.hatch.build.targets.wheel]
 packages = ["src/{{cookiecutter.project_slug}}"]
 
@@ -96,6 +95,7 @@ reportUnknownMemberType = "none"
 reportUnknownVariableType = "none"
 reportUnknownArgumentType = "none"
 reportAny = "none"
+reportExplicitAny = "none"
 
 # === Lint + Formatting === #
 [tool.ruff] # https://docs.astral.sh/ruff/settings
@@ -158,7 +158,7 @@ exclude = []
         "RET504", # Unnecessary assignment to `...` before `return` statement
         "G004",   # Logging statement uses f-string
 
-        # TODO: Comment out for produciton release
+        # TODO: Comment out for production release
         "ERA001", # Found commented-out code
         "S101",   # Use of `assert` detected
         "G004",   # Logging statement uses f-string
