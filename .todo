@@ -1,19 +1,21 @@
 Features:
-    ☐ Add `Github action` for CI and package publishing
-    ☐ Add docs
-    ☐ Add python version handling in `pyproject.toml` clasifiers
+    ☐ Add python version handling in `pyproject.toml` classifiers
     ☐ Use RestructuredText for docs, README, etc
-    ☐ Write setup_project script in Python see: `draft/setup_project.py`
-        ☐ Support `macos`, `windows` and `linux`
-    ☐ Separate setup scripts to setup git, github repo, virtual env, etc
-        ☐ Allow repository to already exist?
 
 Bugs:
 
-Code Improvement:
-
 Tests:
 
+Codebase Improvement:
+
+Continuous Integration:
+        ☐ Investigate why `Basedpyright` (and `Pyright`) doesn't find `Pytest` and `hatchling` packages without reinstalling
+        ☐ Investigate the cache issue with `uv` on `windows` -- maybe also with regular `pip` with the `actions/cache@v4`
+        ☐ Investigate why `Ruff` action doesn't find `pipx` on `windows` without reinstalling with pip
+        ☐ Investigate how to fix space in `pipx` on `windows`
+        ☐ Investigate why `Basedpyright` gives different results on `windows`
+
 Final:
+    ☐ Add docs
     ☐ Update `pyproject.toml`
     ☐ Update `README.md`

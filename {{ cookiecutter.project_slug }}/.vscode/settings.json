@@ -15,9 +15,19 @@
         "cookiecutter",
         "Kajih",
         "pypi",
+        "pipx",
+        "ipynb",
         "{{cookiecutter.project_slug}}",
         "{{cookiecutter.full_name}}",
         "Quickstart",
-        "pyproject"
+        "pyproject",
+        "basedpyright",
+        "verifytypes",
+        "icecream",
+        "ipykernel",
+        "pydocstyle",
+        "pythonpath",
+        "testpaths",
+        ""
     ]
 }
