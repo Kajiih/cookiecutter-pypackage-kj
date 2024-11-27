@@ -52,8 +52,8 @@ def check_required_commands() -> None:
 
 def create_virtualenv() -> None:
     """Create a virtual environment using uv."""
-    proceed = input("\nDo you want to create a virtual environment? (y/n): ").strip().lower()
-    if proceed == "y":
+    proceed = input("\nDo you want to create a virtual environment? (Y/n): ").strip().lower()
+    if proceed != "n":
         print(f"{GREEN}Creating virtual environment...{RESET}")
         run_command(["uv", "venv", "--python", PY_VERSION])
         # Install dependencies
@@ -65,8 +65,8 @@ def create_virtualenv() -> None:
 
 def initialize_git_repo() -> None:
     """Initialize a Git repository."""
-    proceed = input("\nDo you want to initialize a Git repository? (y/n):").strip().lower()
-    if proceed == "y":
+    proceed = input("\nDo you want to initialize a Git repository? (Y/n): ").strip().lower()
+    if proceed != "n":
         print(f"{GREEN}Initializing Git repository...{RESET}")
         run_command(["git", "init"])
         run_command(["git", "branch", "-M", "main"])
@@ -76,8 +76,8 @@ def initialize_git_repo() -> None:
 
 def create_github_repo() -> None:
     """Create a GitHub repository."""
-    proceed = input("\nDo you want to create a GitHub repository? (y/n): ").strip().lower()
-    if proceed == "y":
+    proceed = input("\nDo you want to create a GitHub repository? (Y/n): ").strip().lower()
+    if proceed != "n":
         visibility: str = "--public" if not PRIVATE else "--private"
         print(f"{GREEN}Creating GitHub repository...{RESET}")
         try:
@@ -103,8 +103,8 @@ def create_github_repo() -> None:
 
 def delete_setup_script() -> None:
     """Delete the setup script."""
-    proceed = input("\nDo you want to delete the setup script? (y/n): ").strip().lower()
-    if proceed == "y":
+    proceed = input("\nDo you want to delete the setup script? (Y/n): ").strip().lower()
+    if proceed != "n":
         script_path: Path = Path(__file__).resolve()
         print(f"{GREEN}Deleting setup script {script_path}...{RESET}")
         script_path.unlink()
@@ -115,11 +115,11 @@ def delete_setup_script() -> None:
 def initial_commit_and_push() -> None:
     """Make initial commit and push to GitHub."""
     proceed = (
-        input("\nDo you want to make the initial commit and push to GitHub? (y/n): ")
+        input("\nDo you want to make the initial commit and push to GitHub? (Y/n): ")
         .strip()
         .lower()
     )
-    if proceed == "y":
+    if proceed != "n":
         print(f"{GREEN}Setting up initial commit and pushing to GitHub...{RESET}")
         run_command(["git", "add", "-A"])
         run_command(["git", "commit", "-m", "🎉 Project setup"])
@@ -132,8 +132,6 @@ def display_success_message() -> None:
     """Display the success message and instructions."""
     print("\n" + "=" * 59)
     print(f"{BOLD}{GREEN}🎉 Project setup successfully completed!{RESET}")
-    # print(f"{GREEN}Virtual environment created and dependencies installed.{RESET}")
-    # print(f"{GREEN}Git repository initialized and pushed to GitHub.{RESET}")
     print("\nYou're ready to start coding!\n")
 
     # Instructions to activate virtual environment
