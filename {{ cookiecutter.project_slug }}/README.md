@@ -24,17 +24,17 @@
 
 ## ⬇️ Installation
 
-You can install **{ cookiecutter.project_slug }}** via pip:
+You can install **{{ cookiecutter.project_slug }}** via pip:
 
 ```bash
-pip install { cookiecutter.project_slug | replace("_", "-") }}
+pip install {{ cookiecutter.__hyphen_project_slug }}
 ```
 
 <!-- ### Requirements -->
 
 ## 🏃 Getting Started
 
-[Documentation](https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io)
+[Documentation](https://{{ cookiecutter.__hyphen_project_slug }}.readthedocs.io)
 
 <!-- ## 📔 Citation -->
 
@@ -60,9 +60,9 @@ This package was created with [Cookiecutter](https://github.com/audreyr/cookiecu
 [codecov-image]: https://img.shields.io/codecov/c/github/{{ cookiecutter.__gh_slug }}/main.svg?logo=codecov&logoColor=aaaaaa&labelColor=333333
 [codecov-link]: https://codecov.io/github/{{ cookiecutter.__gh_slug }}
 
-[pypi-image]: https://img.shields.io/pypi/v/{{ cookiecutter.project_slug | replace("_", "-") }}.svg?logo=pypi&logoColor=aaaaaa&labelColor=333333
-[pypi-link]: https://pypi.python.org/pypi/{{ cookiecutter.project_slug | replace("_", "-") }}
+[pypi-image]: https://img.shields.io/pypi/v/{{ cookiecutter.__hyphen_project_slug }}.svg?logo=pypi&logoColor=aaaaaa&labelColor=333333
+[pypi-link]: https://pypi.python.org/pypi/{{ cookiecutter.__hyphen_project_slug }}
 
-[python-image]: https://img.shields.io/pypi/pyversions/{{ cookiecutter.project_slug | replace("_", "-") }}?logo=python&logoColor=aaaaaa&labelColor=333333
+[python-image]: https://img.shields.io/pypi/pyversions/{{ cookiecutter.__hyphen_project_slug }}?logo=python&logoColor=aaaaaa&labelColor=333333
 [license-image]: https://img.shields.io/badge/license-{{ cookiecutter.open_source_license | replace(" ", "_") }}-blue.svg?labelColor=333333
 {%- endif %}

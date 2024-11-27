@@ -42,7 +42,7 @@ dependencies = [
     # "cyclopts",
     # "toolz",
     # "tqdm",
-    ]
+]
 
 
 [tool.uv]
@@ -182,7 +182,7 @@ exclude = []
         ]
         "dev/_*" = [
             "D103", # Missing docstring in public function
-            ]
+        ]
 
         [tool.ruff.lint.pydocstyle]
         convention = "google"
