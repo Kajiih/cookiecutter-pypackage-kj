@@ -54,11 +54,11 @@ This package was created with [Cookiecutter](https://github.com/audreyr/cookiecu
 
 {% if is_open_source -%}
 <!-- Links -->
-[github-ci-image]: https://github.com/{{ __gh_slug }}/actions/workflows/build.yml/badge.svg?branch=main
-[github-ci-link]: https://github.com/{{__gh_slug }}/actions?query=workflow%3Abuild+branch%3Amain
+[github-ci-image]: https://github.com/{{ cookiecutter.__gh_slug }}/actions/workflows/build.yml/badge.svg?branch=main
+[github-ci-link]: https://github.com/{{ cookiecutter.__gh_slug }}/actions?query=workflow%3Abuild+branch%3Amain
 
-[codecov-image]: https://img.shields.io/codecov/c/github/{{ __gh_slug }}/main.svg?logo=codecov&logoColor=aaaaaa&labelColor=333333
-[codecov-link]: https://codecov.io/github/{{__gh_slug }}
+[codecov-image]: https://img.shields.io/codecov/c/github/{{ cookiecutter.__gh_slug }}/main.svg?logo=codecov&logoColor=aaaaaa&labelColor=333333
+[codecov-link]: https://codecov.io/github/{{ cookiecutter.__gh_slug }}
 
 [pypi-image]: https://img.shields.io/pypi/v/{{ cookiecutter.project_slug | replace("_", "-") }}.svg?logo=pypi&logoColor=aaaaaa&labelColor=333333
 [pypi-link]: https://pypi.python.org/pypi/{{ cookiecutter.project_slug | replace("_", "-") }}
