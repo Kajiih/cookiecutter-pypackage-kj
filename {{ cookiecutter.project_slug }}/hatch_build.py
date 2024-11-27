@@ -30,7 +30,11 @@ class AboutMetadataHookOld(MetadataHookInterface):
         spec.loader.exec_module(about)
 
         # Map __about__ attributes to metadata fields
-        metadata["authors"] = [{"name": about.__author__, "email": about.__author_email__}]
+        authors: list[str] = about.__authors__
+        emails: list[str] = about.__author_emails__
+        metadata["authors"] = [
+            {"name": name, "email": email} for name, email in zip(authors, emails, strict=True)
+        ]
         metadata["urls"] = {
             "Repository": about.__repo_url__,
             "Issues": about.__issues_url__,
