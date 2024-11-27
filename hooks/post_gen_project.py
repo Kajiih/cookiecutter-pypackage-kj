@@ -20,7 +20,7 @@ def get_python_command() -> str:
 
 
 if __name__ == "__main__":
-    if "Not open source" == "{{ cookiecutter.open_source_license }}":  # noqa: PLR0133
+    if "Not open source" == "{{ cookiecutter.open_source_license }}":  # noqa: PLR0133 # pyright: ignore[reportUnnecessaryComparison]
         pathlib.Path("LICENSE").unlink()
 
     python_cmd = get_python_command()

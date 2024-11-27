@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "cookiecutter-pypackage-kj"
-version = "0.2.2"
+version = "0.2.3"
 description = "Kajih's Cookiecutter template for a Python package"
 readme = "README.md"
 license = "BSD-3-Clause"
@@ -57,6 +57,7 @@ reportUnknownMemberType = "none"
 reportUnknownVariableType = "none"
 reportUnknownArgumentType = "none"
 reportAny = "none"
+reportExplicitAny = "none"
 
 # === Lint + Formatting === #
 [tool.ruff] # https://docs.astral.sh/ruff/settings
