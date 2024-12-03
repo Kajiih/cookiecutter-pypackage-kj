@@ -146,6 +146,7 @@ exclude = []
         "PERF", # Perflint
         "FURB", # refurb
         # "WPS",  # wemake-python-styleguide -> Not yet supported
+        "INP",
 
     ]
     ignore = [
