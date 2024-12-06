@@ -28,6 +28,7 @@
         "pydocstyle",
         "pythonpath",
         "testpaths",
+        "embedder",
         ""
     ]
 }
