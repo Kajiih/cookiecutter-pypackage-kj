@@ -55,7 +55,7 @@ jobs:
         run: python dev/scripts/format_snippet_prints.py
 
       - name: 📝 Run code embedder
-        uses: kvankova/code-embedder@v1.1.0
+        uses: kvankova/code-embedder@v1.1.1
         env:
           {%- raw %}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
