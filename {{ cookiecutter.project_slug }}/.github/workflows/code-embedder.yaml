@@ -19,8 +19,6 @@ jobs:
     steps:
       - name: 🛎️ Checkout
         uses: actions/checkout@v4
-        # with:
-        #   ref: ${{ github.event.pull_request.head.ref }}
 
       - name: 🐍 Install uv with caching
         uses: astral-sh/setup-uv@v3
@@ -28,16 +26,20 @@ jobs:
           enable-cache: true
           version: "0.5.4"
 
+    {%- raw %}
       - name: 🐍 Set up Python ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
+    {%- endraw %}
 
       - name: 💾 Setup pip cache
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
+          {%- raw %}
           key: ${{ runner.os }}-pip-${{ hashFiles('uv.lock') }}
+          {%- endraw %}
 
       - name: 📥 Install the project
         run: |
@@ -55,4 +57,6 @@ jobs:
       - name: 📝 Run code embedder
         uses: kvankova/code-embedder@v1.1.0
         env:
+          {%- raw %}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          {%- endraw %}
