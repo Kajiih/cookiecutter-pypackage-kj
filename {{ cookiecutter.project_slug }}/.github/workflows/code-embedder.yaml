@@ -22,12 +22,17 @@ jobs:
         # with:
         #   ref: ${{ github.event.pull_request.head.ref }}
 
+      - name: 🐍 Install uv with caching
+        uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+          version: "0.5.4"
+
       - name: 🐍 Set up Python ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
-      # Can't use uv for now: https://github.com/kvankova/code-embedder/issues/48
       - name: 💾 Setup pip cache
         uses: actions/cache@v4
         with:
@@ -36,7 +41,8 @@ jobs:
 
       - name: 📥 Install the project
         run: |
-          pip install .
+          uv sync --all-extras --dev
+          uv pip install .
 
       - name: 🪄 Format raw code snippets with ruff
         run: |

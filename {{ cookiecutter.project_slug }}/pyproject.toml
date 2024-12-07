@@ -238,12 +238,3 @@ docstring-code-format = true
         # Don't complain about abstract methods, they aren't run:
         "@(abc\\.)?abstractmethod",
     ]
-
-
-# We don't use poetry but it is currently necessary for code-embedder github action
-# see: https://github.com/kvankova/code-embedder/issues/48
-[tool.poetry]
-name = ""
-version = "0.0.1" # Looks like to be necessary
-description = ""
-authors = [" <>"]
