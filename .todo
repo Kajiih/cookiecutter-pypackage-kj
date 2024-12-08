@@ -1,6 +1,7 @@
 Features:
     ☐ Add python version handling in `pyproject.toml` classifiers
     ☐ Use RestructuredText for docs, README, etc
+    ☐ Make package-only features optional
 
 Bugs:
 
