@@ -13,6 +13,8 @@ INPUT_DIR = Path("dev/readme_snippets/raw/")
 OUTPUT_DIR = Path("dev/readme_snippets/formatted/")
 SNIPPETS_GLOB_PATTERN = "*.py"
 
+NO_EXEC_COMMENT = r"# snippet: no-exec"
+
 
 class PrintCaptureError(RuntimeError):
     """Error that happened while capturing print output."""
@@ -48,14 +50,17 @@ def process_file(input_file_path: Path, output_file_path: Path) -> None:
     with input_file_path.open() as f:
         lines = f.readlines()
 
-    print_outputs = execute_and_capture_prints("".join(lines))
+    # Remove no-exec lines
+    executed_lines = "".join([line for line in lines if not NO_EXEC_COMMENT in line])
+
+    print_outputs = execute_and_capture_prints(executed_lines)
 
     formatted_lines = []
     print_index = 0
 
     # Go through the lines and add the captured print output as comments
     for line in lines:
-        formatted_lines.append(line)  # Always append the original line
+        formatted_lines.append(line.replace(NO_EXEC_COMMENT, ""))
         if "print(" in line:
             formatted_output = process_print_output(print_outputs[print_index])
             formatted_lines[-1] = f"{line.strip()}{formatted_output}\n"  # Add comment with output

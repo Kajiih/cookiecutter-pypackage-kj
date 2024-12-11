@@ -39,6 +39,10 @@ Embed code like this:
 ```python:dev/readme_snippets/formatted/code_embedding_demo.py
 ```
 
+Add a `# snippet: no-exec` comment to not execute the line when formatting the snippet prints (useful for when a user input would be required).
+
+❗**You have to manually add extras used in snippet**
+
 [Documentation](https://{{ cookiecutter.__hyphen_project_slug }}.readthedocs.io)
 
 <!-- ## 📔 Citation -->
@@ -59,15 +63,15 @@ This package was created with [Cookiecutter](https://github.com/audreyr/cookiecu
 
 {% if is_open_source -%}
 <!-- Links -->
-[github-ci-image]: https://github.com/{{ cookiecutter.__gh_slug }}/actions/workflows/build.yml/badge.svg?branch=main
-[github-ci-link]: https://github.com/{{ cookiecutter.__gh_slug }}/actions?query=workflow%3Abuild+branch%3Amain
+[github-ci-image]: <https://github.com/{{> cookiecutter.__gh_slug }}/actions/workflows/build.yml/badge.svg?branch=main
+[github-ci-link]: <https://github.com/{{> cookiecutter.__gh_slug }}/actions?query=workflow%3Abuild+branch%3Amain
 
-[codecov-image]: https://img.shields.io/codecov/c/github/{{ cookiecutter.__gh_slug }}/main.svg?logo=codecov&logoColor=aaaaaa&labelColor=333333
-[codecov-link]: https://codecov.io/github/{{ cookiecutter.__gh_slug }}
+[codecov-image]: <https://img.shields.io/codecov/c/github/{{> cookiecutter.__gh_slug }}/main.svg?logo=codecov&logoColor=aaaaaa&labelColor=333333
+[codecov-link]: <https://codecov.io/github/{{> cookiecutter.__gh_slug }}
 
-[pypi-image]: https://img.shields.io/pypi/v/{{ cookiecutter.__hyphen_project_slug }}.svg?logo=pypi&logoColor=aaaaaa&labelColor=333333
-[pypi-link]: https://pypi.python.org/pypi/{{ cookiecutter.__hyphen_project_slug }}
+[pypi-image]: <https://img.shields.io/pypi/v/{{> cookiecutter.__hyphen_project_slug }}.svg?logo=pypi&logoColor=aaaaaa&labelColor=333333
+[pypi-link]: <https://pypi.python.org/pypi/{{> cookiecutter.__hyphen_project_slug }}
 
-[python-image]: https://img.shields.io/pypi/pyversions/{{ cookiecutter.__hyphen_project_slug }}?logo=python&logoColor=aaaaaa&labelColor=333333
-[license-image]: https://img.shields.io/badge/license-{{ cookiecutter.open_source_license | replace(" ", "_") }}-blue.svg?labelColor=333333
+[python-image]: <https://img.shields.io/pypi/pyversions/{{> cookiecutter.__hyphen_project_slug }}?logo=python&logoColor=aaaaaa&labelColor=333333
+[license-image]: <https://img.shields.io/badge/license-{{> cookiecutter.open_source_license | replace(" ", "_") }}-blue.svg?labelColor=333333
 {%- endif %}

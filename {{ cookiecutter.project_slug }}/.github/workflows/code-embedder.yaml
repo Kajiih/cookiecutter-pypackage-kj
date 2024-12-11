@@ -40,10 +40,10 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('uv.lock') }}
           {%- endraw %}
 
+      # !! You have to manually add extras used in snippet
       - name: 📥 Install the project
         run: |
-          uv sync --all-extras --dev
-          uv pip install .
+          uv pip install .  # extras with ".[extra_1, extra_2, ...]" including quotation marks ""
 
       - name: 🪄 Format raw code snippets with ruff
         run: |
