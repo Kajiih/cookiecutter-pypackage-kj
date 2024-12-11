@@ -36,6 +36,7 @@ classifiers = [ # https://pypi.org/classifiers/
 ]
 
 dependencies = [
+    # "kajihs_utils"
     # "frosch",
     # "loguru",
     # "rich",
