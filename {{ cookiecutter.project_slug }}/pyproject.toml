@@ -1,10 +1,10 @@
 {%- set is_open_source = cookiecutter.open_source_license != 'Not open source' -%}
 {%- set license_classifiers = {
-    'MIT license': 'License :: OSI Approved :: MIT License',
-    'BSD license': 'License :: OSI Approved :: BSD License',
-    'ISC license': 'License :: OSI Approved :: ISC License (ISCL)',
-    'Apache Software License 2.0': 'License :: OSI Approved :: Apache Software License',
-    'GNU General Public License v3': 'License :: OSI Approved :: GNU General Public License v3 (GPLv3)'
+'MIT license': 'License :: OSI Approved :: MIT License',
+'BSD license': 'License :: OSI Approved :: BSD License',
+'ISC license': 'License :: OSI Approved :: ISC License (ISCL)',
+'Apache Software License 2.0': 'License :: OSI Approved :: Apache Software License',
+'GNU General Public License v3': 'License :: OSI Approved :: GNU General Public License v3 (GPLv3)'
 } -%}
 
 [build-system]
@@ -12,15 +12,17 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
+
+{% if is_open_source -%}
+
+{% endif -%}
 name = "{{cookiecutter.project_slug}}"
 dynamic = ["version", "authors", "urls"]
 description = "{{cookiecutter.project_short_description}}"
 readme = "README.md"
-{% if is_open_source -%}
 license = { file = "LICENSE" }
-{% endif -%}
 requires-python = ">={{cookiecutter.minimal_python_version}}"
-keywords = ["python"] # TODO: Add these
+keywords = ["python"]                                         # TODO: Add these
 
 classifiers = [ # https://pypi.org/classifiers/
     "Development Status :: 2 - Pre-Alpha",
@@ -164,6 +166,7 @@ exclude = []
         "ERA001", # Found commented-out code
         "S101",   # Use of `assert` detected
         "G004",   # Logging statement uses f-string
+        "TC006",  # Add quotes around typing.cast (hurts refactoring)
     ]
 
         [tool.ruff.lint.per-file-ignores]
