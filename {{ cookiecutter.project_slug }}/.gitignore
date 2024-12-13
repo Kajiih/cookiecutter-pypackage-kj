@@ -169,5 +169,8 @@ cython_debug/
 # IDE settings
 .vscode/
 
+# Dev
+old/
+
 # Code embedding
 dev/readme_snippets/formatted/
