@@ -8,7 +8,7 @@
 } -%}
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling >= 1.27"]
 build-backend = "hatchling.build"
 
 [project]
@@ -20,7 +20,7 @@ name = "{{cookiecutter.project_slug}}"
 dynamic = ["version", "authors", "urls"]
 description = "{{cookiecutter.project_short_description}}"
 readme = "README.md"
-license = { file = "LICENSE" }
+license-files = ["LICENSE"]
 requires-python = ">={{cookiecutter.minimal_python_version}}"
 keywords = ["python"]                                         # TODO: Add these
 
