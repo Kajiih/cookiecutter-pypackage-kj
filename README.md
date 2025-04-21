@@ -56,4 +56,3 @@ Unsure the following dependencies are installed:
 - Automatically setups GitHub repository and virtual environment with `uv`
 - Configurations for `Ruff`, `Pytest`, `pytest-coverage`
 - Dynamic project metadata with `hatch`
-- TODOs management with [todo+](https://github.com/fabiospampinato/vscode-todo-plus#demo)
